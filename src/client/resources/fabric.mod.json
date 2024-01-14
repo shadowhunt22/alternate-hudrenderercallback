@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "alternate-hudrendercallback",
+	"version": "${version}",
+	"name": "alternate-hudrendercallback",
+	"description": "An alternate HudRenderer API with slight changes to FAPI's HudRendererCallback",
+	"authors": [
+		"ShadowHunter22"
+	],
+	"contact": {
+	},
+	"license": "Apache-2.0",
+	"icon": "assets/alternate-hudrendercallback/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+          "com.shadowhunter22.AlternateHudRendererCallbackClient"
+		]
+	},
+	"mixins": [
+		{
+			"config": "alternate-hudrendercallback.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.3",
+		"minecraft": "~1.20",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
