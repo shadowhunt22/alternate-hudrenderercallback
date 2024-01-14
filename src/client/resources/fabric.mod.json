@@ -14,7 +14,7 @@
 	"environment": "client",
 	"entrypoints": {
 		"client": [
-          "com.shadowhunter22.AlternateHudRendererCallbackClient"
+			"com.shadowhunter22.AlternateHudRendererCallbackClient"
 		]
 	},
 	"mixins": [
@@ -28,8 +28,5 @@
 		"minecraft": "~1.20",
 		"java": ">=17",
 		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
 	}
 }

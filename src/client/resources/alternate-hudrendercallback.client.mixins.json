@@ -1,9 +1,9 @@
 {
 	"required": true,
-	"package": "com.shadowhunter22.mixin.client",
+	"package": "com.shadowhunter22.mixin.client.rendering",
 	"compatibilityLevel": "JAVA_17",
 	"client": [
-		"ExampleClientMixin"
+		"InGameHudMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
