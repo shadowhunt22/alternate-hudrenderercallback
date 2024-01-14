@@ -22,7 +22,6 @@ loom {
 			sourceSet sourceSets.client
 		}
 	}
-
 }
 
 dependencies {
@@ -60,10 +59,12 @@ jar {
 	}
 }
 
-publishing {
-	publications {
-		maven(MavenPublication) {
-			from components.java
+afterEvaluate {
+	publishing {
+		publications {
+			maven(MavenPublication) {
+				from components.java
+			}
 		}
 	}
 }
