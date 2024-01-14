@@ -5,6 +5,8 @@ plugins {
 
 version = project.mod_version
 group = project.maven_group
+sourceCompatibility = 17
+targetCompatibility = 17
 
 base {
 	archivesName = project.archives_base_name
@@ -57,5 +59,13 @@ java {
 jar {
 	from("LICENSE") {
 		rename { "${it}_${project.base.archivesName.get()}"}
+	}
+}
+
+publishing {
+	publications {
+		maven(MavenPublication) {
+			from components.java
+		}
 	}
 }
