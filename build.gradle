@@ -24,28 +24,6 @@ loom {
 
 }
 
-sourceSets {
-	testmod {
-		compileClasspath += main.compileClasspath
-		runtimeClasspath += main.runtimeClasspath
-	}
-
-	testmodClient {
-		compileClasspath += main.compileClasspath
-		runtimeClasspath += main.runtimeClasspath
-		compileClasspath += client.compileClasspath
-		runtimeClasspath += client.runtimeClasspath
-
-		compileClasspath += testmod.compileClasspath
-		runtimeClasspath += testmod.runtimeClasspath
-	}
-
-	test {
-		compileClasspath += testmodClient.compileClasspath
-		runtimeClasspath += testmodClient.runtimeClasspath
-	}
-}
-
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
