@@ -58,24 +58,3 @@ jar {
 		rename { "${it}_${project.base.archivesName.get()}"}
 	}
 }
-
-// configure the maven publication
-publishing {
-	publications {
-		mavenJava(MavenPublication) {
-			from components.java
-		}
-	}
-
-	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
-	repositories {
-		maven {
-			name = "shadowhunter22"
-			url = uri("https://maven.pkg.github.com/shadowhunt22/alternate-hudrenderercallback")
-			credentials {
-				username "$gitUsername"
-				password "$gitPassword"
-			}
-		}
-	}
-}
