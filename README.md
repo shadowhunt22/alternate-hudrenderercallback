@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.shadowhunter22:alternate-hudrenderercallback:{minecraft_version}-{tag_version}'
+    modImplementation 'com.github.shadowhunt22:alternate-hudrenderercallback:{release_version}' // ensure you use modImplementation!
 }
 ```
 
