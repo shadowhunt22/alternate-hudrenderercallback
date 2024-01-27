@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"id": "alternate-hudrendercallback",
 	"version": "${version}",
-	"name": "alternate-hudrendercallback",
+	"name": "Alternate HudEenderCallback",
 	"description": "An alternate HudRenderer API with slight changes to FAPI's HudRendererCallback",
 	"authors": [
 		"ShadowHunter22"
