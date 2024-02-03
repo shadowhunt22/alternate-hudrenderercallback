@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"id": "alternate-hudrendercallback",
 	"version": "${version}",
-	"name": "Alternate HudEenderCallback",
+	"name": "Alternate HudRenderCallback",
 	"description": "An alternate HudRenderer API with slight changes to FAPI's HudRendererCallback",
 	"authors": [
 		"ShadowHunter22"
@@ -23,5 +23,13 @@
 		"minecraft": "~1.20",
 		"java": ">=17",
 		"fabric-api": "*"
+	},
+	"custom": {
+		"modmenu": {
+			"badges": [
+				"library"
+			],
+			"update_checker": false
+		}
 	}
 }
