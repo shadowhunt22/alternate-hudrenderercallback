@@ -17,20 +17,25 @@
 package com.shadowhunter22.mixin.client.rendering;
 
 import com.shadowhunter22.api.client.renderer.v1.AlternateHudRendererCallback;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.LayeredDrawer;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.hud.InGameHud;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(InGameHud.class)
 public class InGameHudMixin {
+    @Shadow @Final private LayeredDrawer layeredDrawer;
+
     // modifications made: changed injection point
-    @Inject(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerInteractionManager;getCurrentGameMode()Lnet/minecraft/world/GameMode;", ordinal = 1))
-    public void render(DrawContext drawContext, float tickDelta, CallbackInfo callbackInfo) {
+    @Inject(method = "<init>", at = @At(value = "TAIL"))
+    public void render(MinecraftClient client, CallbackInfo ci) {
         // modifications made: changed from FAPIs interface to my interface
-        AlternateHudRendererCallback.EVENT.invoker().onHudRender(drawContext, tickDelta);
+        this.layeredDrawer.addLayer(((context, tickDelta) -> AlternateHudRendererCallback.EVENT.invoker().onHudRender(context, tickDelta)));
     }
 }
