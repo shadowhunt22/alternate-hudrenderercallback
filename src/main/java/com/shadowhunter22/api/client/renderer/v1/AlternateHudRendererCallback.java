@@ -20,6 +20,7 @@ import net.minecraft.client.gui.DrawContext;
 
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;
+import net.minecraft.client.render.RenderTickCounter;
 
 public interface AlternateHudRendererCallback {
     // modifications mode: change HudRendererCallback -> AlternateHudRendererCallback
@@ -35,5 +36,5 @@ public interface AlternateHudRendererCallback {
      * @param drawContext the {@link DrawContext} instance
      * @param tickDelta Progress for linearly interpolating between the previous and current game state
      */
-    void onHudRender(DrawContext drawContext, float tickDelta);
+    void onHudRender(DrawContext drawContext, RenderTickCounter tickDelta);
 }

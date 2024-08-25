@@ -18,13 +18,14 @@ package com.shadowhunter22.gui.hud;
 
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.util.Identifier;
 
 public class FabricHudTest implements HudRenderCallback {
-    private final Identifier TEST_TEXTURE = new Identifier("alternate-hudrendercallback-test-mod", "textures/gui/hud/fancy_indicator.png");
+    private final Identifier TEST_TEXTURE = Identifier.of("alternate-hudrendercallback-test-mod", "textures/gui/hud/fancy_indicator.png");
 
     @Override
-    public void onHudRender(DrawContext drawContext, float tickDelta) {
+    public void onHudRender(DrawContext drawContext, RenderTickCounter tickCounter) {
         drawContext.drawTexture(TEST_TEXTURE, drawContext.getScaledWindowWidth() / 2 - 5, drawContext.getScaledWindowHeight() / 2 - 5, 0, 0, 22, 22, 22, 22);
     }
 }

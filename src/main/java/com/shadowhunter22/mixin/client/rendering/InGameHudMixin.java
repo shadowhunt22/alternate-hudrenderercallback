@@ -36,6 +36,6 @@ public class InGameHudMixin {
     @Inject(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/LayeredDrawer;addLayer(Lnet/minecraft/client/gui/LayeredDrawer$Layer;)Lnet/minecraft/client/gui/LayeredDrawer;", ordinal = 3))
     public void render(MinecraftClient client, CallbackInfo ci) {
         // modifications made: changed from FAPIs interface to my interface
-        this.layeredDrawer.addLayer(((context, tickDelta) -> AlternateHudRendererCallback.EVENT.invoker().onHudRender(context, tickDelta)));
+        this.layeredDrawer.addLayer(((context, tickCounter) -> AlternateHudRendererCallback.EVENT.invoker().onHudRender(context, tickCounter)));
     }
 }
