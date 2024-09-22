@@ -14,4 +14,4 @@ dependencies {
 }
 ```
 
-Note: this only supports Minecraft 1.20-1.20.4
+This supports Minecraft 1.20-1.21.1
