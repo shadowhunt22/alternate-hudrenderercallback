@@ -18,6 +18,7 @@ package com.shadowhunter22.gui.hud;
 
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.util.Identifier;
 
@@ -26,6 +27,6 @@ public class FabricHudTest implements HudRenderCallback {
 
     @Override
     public void onHudRender(DrawContext drawContext, RenderTickCounter tickCounter) {
-        drawContext.drawTexture(TEST_TEXTURE, drawContext.getScaledWindowWidth() / 2 - 5, drawContext.getScaledWindowHeight() / 2 - 5, 0, 0, 22, 22, 22, 22);
+        drawContext.drawTexture(RenderLayer::getGuiTextured, TEST_TEXTURE, drawContext.getScaledWindowWidth() / 2 - 5, drawContext.getScaledWindowHeight() / 2 - 5, 0, 0, 22, 22, 22, 22);
     }
 }

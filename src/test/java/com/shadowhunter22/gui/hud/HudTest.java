@@ -17,15 +17,18 @@
 package com.shadowhunter22.gui.hud;
 
 import com.shadowhunter22.api.client.renderer.v1.AlternateHudRendererCallback;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.util.Identifier;
 
 public class HudTest implements AlternateHudRendererCallback {
-    private final Identifier TEST_TEXTURE = Identifier.of("alternate-hudrendercallback-test-mod", "textures/gui/hud/fancy_indicator.png");
+	private final Identifier TEST_TEXTURE = Identifier.of("alternate-hudrendercallback-test-mod", "textures/gui/hud/fancy_indicator.png");
 
-    @Override
-    public void onHudRender(DrawContext drawContext, RenderTickCounter tickDelta) {
-        drawContext.drawTexture(TEST_TEXTURE, drawContext.getScaledWindowWidth() / 2 - 5, drawContext.getScaledWindowHeight() / 2 + 25, 0, 0, 22, 22, 22, 22);
-    }
+	@Override
+	public void onHudRender(DrawContext context, RenderTickCounter tickCounter) {
+		context.drawTexture(RenderLayer::getGuiTextured, TEST_TEXTURE, context.getScaledWindowWidth() / 2 - 5, context.getScaledWindowHeight() / 2 + 25, 0, 0, 22, 22, 22, 22);
+		context.drawText(MinecraftClient.getInstance().textRenderer, "My callback", context.getScaledWindowWidth() / 2 - 5, context.getScaledWindowHeight() / 2 + 25, 0, true);
+	}
 }
