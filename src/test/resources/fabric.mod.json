@@ -1,0 +1,16 @@
+{
+	"schemaVersion": 1,
+	"id": "alternate-hudrendercallback-test-mod",
+	"version": "${version}",
+	"name": "Alternate HudRenderCallback Test",
+	"license": "Apache-2.0",
+	"environment": "client",
+	"depends": {
+		"alternate-hudrendercallback": ">=0.1.3"
+	},
+	"entrypoints": {
+		"client": [
+			"com.shadowhunter22.AlternateHudRendererTest"
+		]
+	}
+}
